@@ -1,0 +1,23 @@
+train:
+  cmd: python train.py
+  deps:
+  - path: data
+    md5: b8f4d5a78e55e88906d5f4aeaf43802e.dir
+    size: 41149064
+    nfiles: 1800
+  - path: train.py
+    md5: eb3574fe76692fccdb6c12111d5d989c
+    size: 4130
+  outs:
+  - path: bottleneck_features_train.npy
+    md5: 6732cc2c01339a9b30d68287cfb414e5
+    size: 32768128
+  - path: bottleneck_features_validation.npy
+    md5: c694a5bbb3f173d799285695531f2166
+    size: 26214528
+  - path: metrics.csv
+    md5: b80c72f8ae0cbda139e15ce7132de85f
+    size: 824
+  - path: model.h5
+    md5: 5d0f928c02b34b70d74ea5e8f193d830
+    size: 8405536

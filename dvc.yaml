@@ -1,0 +1,13 @@
+stages:
+  train:
+    cmd: python train.py
+    deps:
+    - data
+    - train.py
+    outs:
+    - bottleneck_features_train.npy
+    - bottleneck_features_validation.npy
+    - model.h5
+    metrics:
+    - metrics.csv:
+        cache: false
