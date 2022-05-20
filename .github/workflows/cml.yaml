@@ -12,7 +12,7 @@ jobs:
         run: |
           cml ci --unshallow
           pip install -r ci_requirements.txt  # Install dependencies
-          dvc pull data --run-cache        # Pull data & run-cache from S3
+          dvc pull -r data --run-cache        # Pull data & run-cache from S3
 
           git fetch --prune
 
