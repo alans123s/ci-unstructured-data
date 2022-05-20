@@ -12,29 +12,29 @@ list_mod = [x for x in data['modified'] if 'jpg' in x['path']]
 list_del = [x for x in data['deleted'] if 'jpg' in x['path']]
 
 if list_add:
-    with open("report.md",'w') as f:
+    with open("report.md","w") as f:
         pd.DataFrame(list_del).to_markdown(f)
-    with open("report.md",'r') as f:
+    with open("report.md","r") as f:
             online = f.readlines()
-            online.insert(0,'## ADDED FILES\n')
-    with open("report.md",'w') as f:
+            online.insert(0,"## ADDED FILES\n")
+    with open("report.md","w") as f:
             f.writelines(online)  
 elif list_mod:
-    with open("report.md",'w') as f:
+    with open("report.md","w") as f:
         pd.DataFrame(list_del).to_markdown(f)
-    with open("report.md",'r') as f:
+    with open("report.md","r") as f:
             online = f.readlines()
-            online.insert(0,'## MODIFIED FILES\n')
-    with open("report.md",'w') as f:
+            online.insert(0,"## MODIFIED FILES\n")
+    with open("report.md","w") as f:
             f.writelines(online)  
 elif list_del:
-    with open("report.md",'w') as f:
+    with open("report.md","w") as f:
         pd.DataFrame(list_del).to_markdown(f)
-    with open("report.md",'r') as f:
+    with open("report.md","r") as f:
             online = f.readlines()
-            online.insert(0,'## DELETED FILES\n')
-    with open("report.md",'w') as f:
+            online.insert(0,"## DELETED FILES\n")
+    with open("report.md","w") as f:
             f.writelines(online)  
 else:
-    with open("report.md") as f:
-        f.write('## NO DATA CHANGES COMPARED TO MASTER')
+    with open("report.md","w") as f:
+        f.write("## NO DATA CHANGES COMPARED TO MASTER")
