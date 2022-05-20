@@ -11,7 +11,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cml ci --unshallow
-          pip install -r requirements.txt  # Install dependencies
+          pip install -r ci_requirements.txt  # Install dependencies
           dvc pull data --run-cache        # Pull data & run-cache from S3
 
           git fetch --prune
