@@ -13,7 +13,7 @@ list_del = [x for x in data['deleted'] if 'jpg' in x['path']]
 
 if list_add:
     with open("report.md","w") as f:
-        pd.DataFrame(list_del).to_markdown(f)
+        pd.DataFrame(list_add).to_markdown(f)
     with open("report.md","r") as f:
             online = f.readlines()
             online.insert(0,"## ADDED FILES\n")
@@ -21,7 +21,7 @@ if list_add:
             f.writelines(online)  
 elif list_mod:
     with open("report.md","w") as f:
-        pd.DataFrame(list_del).to_markdown(f)
+        pd.DataFrame(list_mod).to_markdown(f)
     with open("report.md","r") as f:
             online = f.readlines()
             online.insert(0,"## MODIFIED FILES\n")
