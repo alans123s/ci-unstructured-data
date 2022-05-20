@@ -35,3 +35,6 @@ elif list_del:
             online.insert(0,'## DELETED FILES\n')
     with open("report.md",'w') as f:
             f.writelines(online)  
+else:
+    with open("report.md") as f:
+        f.write('## NO DATA CHANGES COMPARED TO MASTER')
