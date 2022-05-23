@@ -1,2 +1,8 @@
 pandas
 tabulate
+tensorflow>=2,<3
+tqdm>=4.41.0,<5
+keras==2.6.*
+pandas
+pillow
+scipy

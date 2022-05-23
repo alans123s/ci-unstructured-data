@@ -11,12 +11,11 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
 
-          pip install -r ci_requirements.txt && pip install -r requirements.txt # Install dependencies
+          pip install -r ci_requirements.txt # Install dependencies
           cml ci --unshallow
 
-          dvc pull -a        # Pull data & run-cache from S3
+          dvc pull        # Pull data & run-cache from S3
 
-          dvc repro
 
           git fetch --prune
           dvc metrics diff --show-md master >> report.md
