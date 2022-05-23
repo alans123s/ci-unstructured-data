@@ -5,3 +5,4 @@
 /bottleneck_features_validation.npy
 *.ipynb
 *.json
+*.md
