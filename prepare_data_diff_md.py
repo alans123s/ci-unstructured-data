@@ -2,7 +2,6 @@ import os
 import pandas as pd
 import json
 
-os.system('dvc diff --show-json master >> diff.json')
 
 with open('diff.json') as json_data:
     data = json.load(json_data)
@@ -12,7 +11,7 @@ list_mod = [x for x in data['modified'] if 'jpg' in x['path']]
 list_del = [x for x in data['deleted'] if 'jpg' in x['path']]
 
 if list_add:
-    with open("report.md","r") as f:
+    with open("report.md","rw") as f:
             online = f.readlines()
             online.insert(0,pd.DataFrame(list_add).to_markdown(f)+"\n")
     

@@ -17,6 +17,8 @@ jobs:
           dvc pull --run-cache        # Pull data & run-cache from S3
           git fetch --prune
 
+          dvc diff --show-json master >> diff.json
+
           python prepare_data_diff_md.py
 
           cml send-comment report.md
